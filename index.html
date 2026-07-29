@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#237a50" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Fitday</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar"><div><p class="eyebrow" id="date-label"></p><h1 id="greeting">Good morning</h1></div><button class="icon-button" id="theme-toggle" aria-label="Toggle theme">☾</button></header>
+
+    <section class="page active" id="home-page">
+      <div class="hero-card"><div><p class="eyebrow">TODAY'S ENERGY</p><strong id="calories-remaining">1,800</strong><span>calories remaining</span></div><div class="ring" id="calorie-ring"><span id="calories-eaten">0</span><small>eaten</small></div></div>
+      <section class="metric-grid">
+        <article class="metric-card"><span>💧</span><div><b id="water-value">0.0 L</b><small>of <span id="water-goal-label">3.0 L</span> water</small></div><button class="mini-add" data-action="water">+</button></article>
+        <article class="metric-card"><span>👟</span><div><b id="steps-value">0</b><small>of <span id="step-goal-label">7,000</span> steps</small></div><button class="mini-add" data-action="steps">+</button></article>
+      </section>
+      <section class="card overview"><div class="section-title"><div><p class="eyebrow">YOUR PROGRESS</p><h2 id="weight-display">— kg</h2></div><span class="pill" id="goal-progress">Goal</span></div><div class="progress-track"><i id="weight-bar"></i></div><p id="weight-caption">Add your weight to begin.</p></section>
+      <section class="card"><div class="section-title"><div><p class="eyebrow">TODAY'S CHECKLIST</p><h2>Keep it simple</h2></div><span id="check-count">0/4</span></div><div class="checklist" id="home-checklist"></div></section>
+      <section class="tip" id="smart-tip">Start with a glass of water.</section>
+    </section>
+
+    <section class="page" id="meals-page"><div class="page-heading"><p class="eyebrow">DAILY PLAN</p><h1>Meals</h1><p>Your nutrition totals update as you check items off.</p></div><div class="nutrition-grid" id="nutrition-summary"></div><div id="meal-list"></div></section>
+
+    <section class="page" id="progress-page"><div class="page-heading"><p class="eyebrow">YOUR JOURNEY</p><h1>Progress</h1><p>Small consistent changes add up.</p></div><section class="card weight-entry"><label for="weight-input">Morning weight <span>kg</span></label><div><input id="weight-input" inputmode="decimal" type="number" min="20" max="300" step="0.1" placeholder="89.0"/><button id="save-weight">Save</button></div></section><section class="stats-grid"><article><small>CURRENT BMI</small><b id="bmi-value">—</b></article><article><small>TOTAL LOST</small><b id="lost-value">—</b></article><article><small>STREAK</small><b id="streak-value">0 days</b></article></section><section class="card chart-card"><div class="section-title"><div><p class="eyebrow">WEIGHT TREND</p><h2>Last 8 entries</h2></div></div><svg id="weight-chart" viewBox="0 0 320 130" preserveAspectRatio="none" aria-label="Weight trend chart"></svg><p class="chart-empty" id="chart-empty">Your chart will appear here after two weigh-ins.</p></section><section class="card"><div class="section-title"><div><p class="eyebrow">ACHIEVEMENTS</p><h2>Milestones</h2></div></div><div class="achievements" id="achievements"></div></section></section>
+
+    <section class="page" id="grocery-page"><div class="page-heading"><p class="eyebrow">WEEKLY SHOP</p><h1>Grocery list</h1><p>Tap items as they make it into your basket.</p></div><section class="card grocery-add"><input id="grocery-input" placeholder="Add an item" maxlength="60"/><button id="add-grocery">Add</button></section><section class="card"><div class="grocery-list" id="grocery-list"></div></section></section>
+
+    <section class="page" id="settings-page"><div class="page-heading"><p class="eyebrow">YOUR PREFERENCES</p><h1>Settings</h1><p>Everything remains private on this device.</p></div><form class="card settings-form" id="settings-form"><label>Name<input name="name" type="text" placeholder="Toki"/></label><label>Height <span>cm</span><input name="height" type="number" min="100" max="250"/></label><label>Starting weight <span>kg</span><input name="startWeight" type="number" step="0.1"/></label><label>Goal weight <span>kg</span><input name="goalWeight" type="number" step="0.1"/></label><label>Daily calories<input name="calorieGoal" type="number" min="500"/></label><label>Water goal <span>litres</span><input name="waterGoal" type="number" step="0.25" min="0.25"/></label><label>Step goal<input name="stepGoal" type="number" min="500"/></label><button class="primary" type="submit">Save settings</button></form><section class="card backup"><p class="eyebrow">YOUR DATA</p><button id="export-data">Export data</button><label class="file-button">Import data<input id="import-data" type="file" accept="application/json"/></label></section></section>
+  </main>
+  <nav class="bottom-nav" aria-label="Main navigation"><button class="active" data-page="home"><span>⌂</span>Home</button><button data-page="meals"><span>◉</span>Meals</button><button data-page="progress"><span>⌁</span>Progress</button><button data-page="grocery"><span>⌑</span>Grocery</button><button data-page="settings"><span>⚙</span>Settings</button></nav>
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
