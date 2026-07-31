@@ -1,0 +1,2 @@
+/* iOS can reveal the root canvas below a short document. Keep it in sync with dark mode. */
+html:has(body.dark){background:#101612!important}body.dark{background:#101612!important;min-height:100vh}.add-food{width:64px!important;height:64px!important;padding:0!important;border-radius:50%!important;font-size:0!important;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 16px)!important;display:grid!important;place-items:center!important}.add-food span{display:block!important;margin:0!important;font-size:40px!important;line-height:1!important;font-weight:300!important}
