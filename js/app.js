@@ -1,3 +1,4 @@
+const liveWorkoutScript=document.createElement('script');liveWorkoutScript.src='js/live-workout.js';liveWorkoutScript.defer=true;document.head.append(liveWorkoutScript);
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],today=new Date().toISOString().slice(0,10);
 const builtIns=[['Eggs',2,'piece',144,13,1,10],['Banana',1,'piece',105,1,27,0],['Chicken breast',150,'g',248,47,0,5],['Rice',1,'cup',205,4,45,0],['Vegetables',1,'cup',70,3,12,0],['Guava',1,'piece',68,3,14,1],['Tilapia',150,'g',192,39,0,4]];
 const makeFood=([name,serving,unit,calories,protein,carbs,fat],i)=>({id:`built-in-${i}`,name,serving,unit,calories,protein,carbs,fat,fiber:0,sugar:0,sodium:0,builtIn:true});
